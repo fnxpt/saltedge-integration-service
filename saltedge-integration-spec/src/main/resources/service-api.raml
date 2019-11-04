@@ -1,0 +1,31 @@
+#%RAML 1.0
+---
+#===============================================================
+#  References:
+#    - RAML Specification - https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md
+#===============================================================
+title: Salt Edge Integration Service API Spec
+uses: 
+  traits: lib/traits/traits.raml
+version: v1
+baseUri: "service-api/{version}"
+mediaType:  application/json
+protocols: [ HTTP, HTTPS ]
+types:
+#===============================================================
+# API resource definitions
+#===============================================================
+/enrich-transactions:
+  displayName: Enrich transactions
+  post:
+    is: [traits.BadRequestError, traits.InternalServerError]
+    description: Categorizes the transactions
+    body:
+      application/json:
+        schema: !include schemas/body/transactions.json
+    responses:
+      201:
+        description: Categorized transactions
+        body:
+          application/json:
+            schema: !include schemas/body/transactions.json

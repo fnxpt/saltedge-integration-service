@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "The collection of transactions to categorize.",
+  "minItems": 1,
+  "maxItems": 100,
+  "items": {
+    "$ref": "transaction.json"
+  }
+}

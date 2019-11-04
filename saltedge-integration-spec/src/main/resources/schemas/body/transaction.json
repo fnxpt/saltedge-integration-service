@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "javaType": "com.backbase.dbs.capabilities.extended.rest.spec.v1.enrichtransactions.Transaction",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "the description which you wish to categorize (max 4000 chars)",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "action": {
+      "enum": ["learn", "remove"],
+      "description": "learn - will create or update a rule, remove - will remove a previous created rule. Note: category is required when action is learn"
+    },
+    "additional": {
+      "type": "string",
+      "description": "additional information (recommended to use in concatenation with original description, if present)"
+    },
+    "amount": {
+      "type": "number",
+      "description": "the amount of the transaction",
+      "javaType": "java.math.BigDecimal"
+    },
+    "categorization": {
+      "description": "the type of categorization applied. Possible values: none, personal, business. Default: personal",
+      "enum": ["none", "personal", "business"]
+    },
+    "category": {
+      "type": "string",
+      "description": "the new category code for the description, used with action: learn"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "the code of the country, present in Salt Edge API"
+    },
+    "currency_code": {
+      "type": "string",
+      "description": "the code of the currency, present in Salt Edge API"
+    },
+    "identifier": {
+      "type": "string",
+      "description": "a unique identifier of the transaction object (max 255 chars).",
+      "maxLength": 255
+    },
+    "identify_merchant": {
+      "type": "boolean",
+      "description": "whether merchant identification was enabled"
+    },
+    "information": {
+      "type": "string",
+      "description": "information about the transaction"
+    },
+    "mcc": {
+      "type": "string",
+      "description": "the transaction’s Merchant Category Code (https://www.irs.gov/irb/2004-31_IRB)"
+    },
+    "mode": {
+      "description": "possible values are: normal, fee, transfer",
+      "enum": ["normal", "fee", "transfer"]
+    },
+    "original_category": {
+      "type": "string",
+      "description": "the original category of the transaction"
+    },
+    "original_subcategory": {
+      "type": "string",
+      "description": "the original subcategory of the transaction"
+    },
+    "payee": {
+      "type": "string",
+      "description": "to whom money is paid"
+    },
+    "status": {
+      "description": "possible values are: posted, pending",
+      "enum": ["posted", "pending"]
+    },
+    "tags": {
+      "type": "array",
+      "description": "the original tags of the transaction",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extras": {
+      "type": "object",
+      "description": "",
+      "javaType": "java.util.Map<String, String>"
+    }
+  },
+  "required": [
+    "description"
+  ]
+}

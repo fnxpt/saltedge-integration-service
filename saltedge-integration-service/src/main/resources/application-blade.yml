@@ -1,0 +1,12 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/registry/eureka
+
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+
+logging:
+  level:
+    com.backbase: DEBUG

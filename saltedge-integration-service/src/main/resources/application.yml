@@ -1,0 +1,22 @@
+server:
+  port: 9921
+
+backbase:
+  web:
+    security:
+      enabled: true
+
+integration:
+  saltedge:
+    appId: ${SALTEDGE_APP_ID}
+    secret: ${SALTEDGE_SECRET}
+
+sso:
+  jwt:
+    internal:
+      type: signed
+      signature:
+        algorithm: HS256
+        key:
+          type: ENV
+          value: SIG_SECRET_KEY

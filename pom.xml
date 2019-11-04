@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.backbase.dbs.capabilities.extended</groupId>
+    <artifactId>saltedge-integration-service-pom</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Backbase :: Digital Banking Services :: Salt Edge Integration POM</name>
+    <description>Salt Edge Integration Service</description>
+    <url>http://www.backbase.com</url>
+    <organization>
+        <name>Backbase B.V.</name>
+        <url>http://www.backbase.com</url>
+    </organization>
+    <licenses>
+        <license>
+            <name/>
+            <url>https://github.com/Backbase/saltedge-integration-service/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:https://github.com/Backbase/saltedge-integration-service</connection>
+        <url>https://github.com/Backbase/saltedge-integration-service</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>paulocardoso</id>
+            <name>Richard Jones</name>
+            <email>richardj@backbase.com</email>
+            <organization>Backbase B.V.</organization>
+            <organizationUrl>http://www.backbase.com</organizationUrl>
+            <roles>
+                <role>Software Engineer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <sonar.language>java</sonar.language>
+        <projec.version>1.0.0</projec.version>
+    </properties>
+
+
+    <modules>
+        <module>saltedge-integration-spec</module>
+        <module>saltedge-integration-service</module>
+  </modules>
+
+
+</project>
